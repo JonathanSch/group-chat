@@ -1,5 +1,10 @@
 const WebSocket = require('ws')
-const wss = new WebSocket.Server({port:8080})
+const express = require('express');
+const app = express();
+const port = process.env.PORT
+
+const server = app.listen(port)
+const wss = new WebSocket.Server({server,port:8080})
 
 wss.on('listening',()=>{
     console.log('Server up and running')
