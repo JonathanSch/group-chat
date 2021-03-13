@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT
 
 const server = app.listen(port)
-const wss = new WebSocket.Server({server,port:8080})
+const wss = new WebSocket.Server({server,port:8080,path:'/'})
 
 wss.on('listening',()=>{
     console.log('Server up and running')
